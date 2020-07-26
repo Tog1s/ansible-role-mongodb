@@ -1,6 +1,8 @@
 Mongo DB
 =========
 
+[![Build Status](https://travis-ci.com/Tog1s/ansible-role-mongodb.svg?branch=master)](https://travis-ci.com/Tog1s/ansible-role-mongodb)
+
 Role Variables
 --------------
 
