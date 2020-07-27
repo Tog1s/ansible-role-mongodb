@@ -6,18 +6,22 @@ driver:
   # name: vagrant
   # provider:
   #   name: libvirt
-lint:
-  name: yamllint
+lint: | 
+  yamllint
+  ansible-lint
 platforms:
   - name: instance
-    image: "ubuntu:16.04"
+    image: "geerlingguy/docker-ubuntu1604-ansible"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: True
     pre_build_image: True
     # box: ubuntu/xenial64
     # memory: 512
     # cpus: 1
 provisioner:
   name: ansible
-lint: ansible-lint
 verifier:
   name: testinfra
   additional_files_or_dirs:
