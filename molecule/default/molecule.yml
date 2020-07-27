@@ -7,7 +7,7 @@ driver:
   # provider:
   #   name: libvirt
 lint: | 
-  yamllint
+  yamllint .
   ansible-lint
 platforms:
   - name: instance

@@ -18,4 +18,6 @@ install:
 script:
   # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-  - molecule test
+  - molecule create
+  - molecule converge
+  - molecule verify
