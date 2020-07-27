@@ -1,20 +1,15 @@
----
 language: python
 services: docker
-
 sudo: false
-
 install:
-  - pip install ansible molecule docker testinfra
-  - ansible --version
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
-
+- pip install ansible molecule docker testinfra
+- ansible --version
+- printf '[defaults]\nroles_path=../' >ansible.cfg
 script:
-  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
-  - molecule create
-  - molecule converge
-  - molecule verify
-
+- ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+- molecule create
+- molecule converge
+- molecule verify
 notifications:
   slack:
-    secure: tAp+nFtYVGNmM3FZ2GqNKLIe8Xb/suLr8s20vrt7uNwYLkBY1kHzb76YmisgAhaV42Shjm00PDddk67NPN01ZkgRC2SF/ldzkASuG+vUwDSGiXzkrgq0IPk8DZ/BLmbublJl40j+U542AVkajQJ+SuFpACNlLFPU0rsuTR1ioCXmUcOrcOrp92q8xdG8L/CBPe3j+VHZEpXjC3wSiEXwIhK/YKrMvBoHnjnt95RXipQOEyN5iQSxvAdtOR2AA5aVtklmkCeHFWZsvb7dLqJJ/ekuGjbBwaIuczuyGcG0IMnXhurcMHMLJ1NHqVM39MnLkU9zjmV7wymsXT+DNqR+VhJ3ctDbZY3LazH+XxkZbUcmQX3Lr7LzlBhjTxH4aweBS6HCJrYRRBHkw+ZR0gB7ACJkare+QJw/Sihury96dV8OErCH5PgpGvkrk1XeP7CMvPoYRyrt+OMEZjsgAlBrxM6iQDHZ9rUl4YKaDMipHX5ml6R3g5La+5R0S941orZdF67al48aberFhcMnErzkVzfANa8XXzR/R8Uus0VT+O1iSOudWBLmqjfrrM5uGsclhtz8qB/Y2R5dvzmsB53y5gVvCSebcAQLOyY8kILDwRyDBZU2ih+RzTMenOEJdiAvqtWoHYeWFJql59RcbQVV4/+0Mm0st3axl5wEmBug4W8=
+    secure: OVTlfe4RW5YuGhCKSWm99mPr94D2wMtiHWaZPQ0HoLsVUAkXkBncwVllwjLQkwxZMLAGuEITACWsYNDLJHEbrdtY53+2MA3HTarRrFgejLzAaPbNUSdlNLkuH8buR0G/a8hMe1YvXOZUgaH+Fw2RGKEco5GPrZ6nX7eJ+cB93wKig5aFHjuRiE3/nLc6IKs6XmD+4bq2kTK6Me2pAK5RRa+0P4/CJ5PE2dZhF+GvN5KAVy2MEx1z9ufVOrrFCkgX1C8hR5At8CzRKtY5GI6UQTwcG0jG0b3QT874XtdTFgLDRzLnI0ZDgbZyIVJr3YTK6abDFNrGVDYEzpzlsCfLIfJS6jsFi7lIox6DjUj4mPCz/Uq25/+TaueiyG+xCrYsZiFBcEExX81GKu6XHwd4VVu3fzQH5ZS/e1NNa852ZAy/mPeZU9afLt9MB9KWcCigJO3s4u3Z+RYJax5DbDWbkeR8WGi75gKPsDTEuN0E48E2Uf1wyI5lwZT0yqZGY3hhPvklcJzyVuHQrn8jtqK9i1rbQygUKsQ28QKNjH62LVMLRSyxz9tljcQRMJ6JSTHdtVE7DOcKCmmgOI64fD20UZu4qZ3573sSrLfQkIAF0qh9RxtFIm2j6aY1IIOk5OteBh550KUaabzHdTgTKLN9YetFMBjDpoAwp6Ku56ePRKs=
